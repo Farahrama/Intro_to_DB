@@ -22,13 +22,13 @@ CREATE TABLE IF NOT EXISTS Customers (
     address TEXT
 );
 CREATE TABLE IF NOT EXISTS Orders (
-    order_id (PRIMARY KEY),
-    customer_id (Foreign Key referencing Customers table),
+    order_id (INT PRIMARY KEY),
+    customer_id (INT Foreign Key referencing Customers table),
     order_date DATE
 );
 CREATE TABLE IF NOT EXISTS Order_Details (
     orderdetailid (PRIMARY KEY),
-    order_id (Foreign Key referencing Orders table),
-    book_id (Foreign Key referencing Books table),
+    order_id (INT FOREIGN KEY referencing Orders table),
+    book_id (FOREIGN KEY referencing Books table),
     quantity DOUBLE
 );
